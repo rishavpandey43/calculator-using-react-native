@@ -7,107 +7,98 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {StyleSheet, View, Text, TextInput, Button} from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const App: () => React$Node = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
+      <View style={styles.sectionContainer}>
+        <View style={styles.result}>
+          <Text style={styles.resultText}>121</Text>
+        </View>
+        <View style={styles.calculation}>
+          <Text style={styles.calculationText}>11*11</Text>
+        </View>
+        <View style={styles.buttons}>
+          <View style={styles.numbers}>
+            <View style={styles.row}>
+              <Button title="0" onPress={() => {}} />
+              <Button title="0" onPress={() => {}} />
+              <Button title="0" onPress={() => {}} />
             </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
+            <View style={styles.row}>
+              <Button title="0" onPress={() => {}} />
+              <Button title="0" onPress={() => {}} />
+              <Button title="0" onPress={() => {}} />
             </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
+            <View style={styles.row}>
+              <Button title="0" onPress={() => {}} />
+              <Button title="0" onPress={() => {}} />
+              <Button title="0" onPress={() => {}} />
             </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
+            <View style={styles.row}>
+              <Button title="0" onPress={() => {}} />
+              <Button title="0" onPress={() => {}} />
+              <Button title="0" onPress={() => {}} />
             </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
           </View>
-        </ScrollView>
-      </SafeAreaView>
+          <View style={styles.operations}>
+            <Button title="+" onPress={() => {}} />
+            <Button title="-" onPress={() => {}} />
+            <Button title="*" onPress={() => {}} />
+            <Button title="/" onPress={() => {}} />
+          </View>
+        </View>
+      </View>
     </>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
   sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+    flex: 1,
+    justifyContent: 'center',
   },
-  sectionTitle: {
+  resultText: {
+    fontSize: 20,
+    color: 'white',
+  },
+  calculationText: {
     fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
+    color: 'white',
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
+  result: {
+    flex: 2,
+    backgroundColor: 'red',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
   },
-  highlight: {
-    fontWeight: '700',
+  calculation: {
+    flex: 1,
+    backgroundColor: 'green',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
   },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+  buttons: {
+    flex: 7,
+    flexDirection: 'row',
+  },
+  numbers: {
+    flex: 4,
+    backgroundColor: 'yellow',
+  },
+  operations: {
+    flex: 2,
+    backgroundColor: 'black',
+    justifyContent: 'space-around',
+  },
+  row: {
+    flexDirection: 'row',
+    flex: 1,
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
 });
 
